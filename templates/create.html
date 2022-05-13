@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Blogly!{% endblock %}
+  {% block content %}
+
+<h1>Add a User</h1>
+
+<form id="createformId" action="/users/new", method="POST">
+    <label for="firstname"></label>
+    <p><input type="text" placeholder="Enter the user's first name" name="firstname" value="" id="firstname"></p>
+    <label for="lastname"></label>
+    <p><input type="text" placeholder="Enter the user's last name" name="lastname" value="" id="lastname"></p>
+    <label for="userURL"></label>
+    <p><input type="text" placeholder="url for image of this user" name="userURL" value="http://michaeljmurphy.com/Michael_J_Murphy.jpg" id="userURL"></p>
+    <p><input class="button addbutton" type="submit" value="Add"></p>
+  </form>
+
+
+  {% endblock %}

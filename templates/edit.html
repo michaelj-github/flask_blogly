@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Blogly!{% endblock %}
+  {% block content %}
+
+<h1>Edit User Information</h1>
+
+<form id="editformId" action="/users/{{user.id}}/edit", method="POST">
+    <label for="firstname"></label>
+    <p><input type="text" name="firstname" value="{{user.first_name}}" id="firstname"></p>
+    <label for="lastname"></label>
+    <p><input type="text" name="lastname" value="{{user.last_name}}" id="lastname"></p>
+    <label for="userURL"></label>
+    <p><input type="text" name="userURL" value="{{user.image_url}}" id="userURL"></p>
+    <p><input class="button addbutton" type="submit" value="Update"></p>
+  </form>
+
+
+  {% endblock %}
