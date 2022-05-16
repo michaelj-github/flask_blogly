@@ -9,6 +9,17 @@
     <p><input type="text" name="post_title" value="{{post.post_title}}" id="post_title"></p>
     <label for="post_content"></label>
     <p><input type="text" name="post_content" value="{{post.post_content}}" id="post_content"></p>
+
+    <br>
+    <h2>Tags</h2>
+    <ul>  
+    {% for tag in tags %}
+    <li class="checkbox"><input type="checkbox" value="{{ tag.id }}" id="tag{{tag.id}}" name="thetags" {% if tag in post.tags %}checked{% endif %}>
+    <label for="tag{{tag.id}}">{{tag.tag_name}}</label></li>
+    {% endfor %}
+    </ul>
+
+    <br>
     <p><input class="button addbutton" type="submit" value="Update"></p>
   </form>
   <form class="cancelform" action="/users/{{user_id}}">

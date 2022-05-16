@@ -8,18 +8,9 @@
 <p>{{post.post_content}}</p>
 <p>By {{user.first_name}} {{user.last_name}} on {{post.created_at[:16]}}</p>
 
-<br>
-<form class="editform" action="/posts/{{post.id}}/edit">
-  <button class="button editbutton">Edit</button>
-</form>
-<form class="deleteform" action="/posts/{{post.id}}/delete", method="POST">
-  <button class="button deletebutton">Delete</button>
-</form>
-<form class="cancelform" action="/users/{{user_id}}">
-  <button class="button cancelbutton">Cancel</button>
-</form>
+<!-- <br>
 
-<!-- <h2>Tags</h2>
+<h2>Tags</h2>
 
 <ul>
 
@@ -31,11 +22,33 @@
 
 </ul> -->
 
+<br>
+<form class="editform" action="/posts/{{post.id}}/edit">
+  <button class="button editbutton">Edit</button>
+</form>
+<form class="deleteform" action="/posts/{{post.id}}/delete", method="POST">
+  <button class="button deletebutton">Delete</button>
+</form>
+<form class="cancelform" action="/users/{{user_id}}">
+  <button class="button cancelbutton">Cancel</button>
+</form>
+
+
+<h2>Tags</h2>
+
+
+<ul>
+
+  {% for tag in post.tags %}
+  
+  <li><a class="nounderline" href="/tags/{{tag.id}}">{{tag.tag_name}}</a></li>
+  
+  {% endfor %}
+  
+  </ul>
+
+
 
 <br><a href='/'>All users list page</a><br>
 
   {% endblock %}
-
-
-
-<!-- <input type="checkbox" id="tag{{tag.id}}" name="tag{{tag.id}}"><label for="tag{{tag.id}}">tag{{tag.tag_name}}</label> -->
