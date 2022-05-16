@@ -69,3 +69,11 @@ img {
 .addbutton {
   background-color: green;
 }
+
+.cancelbutton {
+  background-color: dimgray;
+}
+
+.checkbox {
+  list-style-type: none;
+}

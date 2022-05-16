@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Blogly!{% endblock %}
+  {% block content %}
+
+  <!-- <h1>Add a Post for {{user_id}}</h1> -->
+  <h1>Add a Post</h1>
+
+<form id="createformId" action="/users/{{user_id}}/posts/new", method="POST">
+    <label for="post_title"></label>
+    <p><input type="text" placeholder="Enter the post title" name="post_title" value="" id="post_title"></p>
+    <label for="post_content"></label>
+    <p><input type="text" placeholder="Enter the post content" name="post_content" value="" id="post_content"></p>
+    <p><input class="button addbutton" type="submit" value="Add"></p>
+  </form>
+  <form class="cancelform" action="/users/{{user_id}}">
+    <button class="button cancelbutton">Cancel</button>
+  </form>
+  
+
+  {% endblock %}

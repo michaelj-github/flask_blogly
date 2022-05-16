@@ -15,6 +15,27 @@
   <button class="button deletebutton">Delete</button>
 </form>
 
+<h2>Posts</h2>
+
+<ul>
+
+{% for post in posts %}
+
+<li><a class="nounderline" href="/posts/{{post.id}}">{{post.post_title}}</a></li>
+
+{% endfor %}
+
+</ul>
+
+<form class="form" action="/users/{{user.id}}/posts/new">
+  <button class="button addbutton">Add Post</button>
+</form>
+
+
+
 <br><a href='/'>All users list page</a><br>
 
   {% endblock %}
+
+
+  
